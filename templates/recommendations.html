@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <body style="background-color: #ADD8E6;">
+    <h1 class="text-center">Önerilen Şarkılar</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Şarkı</th>
+                <th scope="col">Sanatçı</th>
+                <th scope="col">Tempo</th>
+                <th scope="col">Enerji</th>
+                <th scope="col">Danslık</th>
+                <th scope="col">Romantiklik</th>
+                <th scope="col">Popülerlik</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for song in songs %}
+            <tr>
+                <td>{{ song['Şarkı'] }}</td>
+                <td>{{ song['Sanatçı'] }}</td>
+                <td>{{ song['Tempo'] }}</td>
+                <td>{{ song['Enerji'] }}</td>
+                <td>{{ song['Danslık'] }}</td>
+                <td>{{ song['Romantiklik'] }}</td>
+                <td>{{ song['Popülerlik'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" style="text-decoration: none;">
+        <button style="cursor: pointer;">Anasayfaya Dön</button>
+    </a>
+    </div>
+{% endblock %}
