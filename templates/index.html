@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <body style="background-color: #ADD8E6;">
+    <p1 style="padding-left: 35%; 
+    font-weight: bold; 
+    font-size: 20px; 
+    color: rgb(211, 51, 51); 
+    font-family: 'Arial'; 
+    text-shadow: 1px 1px 2px #000000;">Lütfen Bütün Değerleri Doldurunuz</p1>    
+    <table class="table">
+        <tbody>
+            {% for song in songs %}
+            <tr>
+                <td>{{ song['Şarkı'] }}</td>
+                <td>{{ song['Sanatçı'] }}</td>
+                <td>{{ song['Tempo'] }}</td>
+                <td>{{ song['Enerji'] }}</td>
+                <td>{{ song['Danslık'] }}</td>
+                <td>{{ song['Romantiklik'] }}</td>
+                <td>{{ song['Popülerlik'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="text-center mt-5">Kullanıcı Tercihleri</h2>
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="tempo">Tempo:</label>
+            <input type="number" class="form-control" name="tempo" step="any" required>
+        </div>
+
+        <div class="form-group">
+            <label for="enerji">Enerji:</label>
+            <input type="number" class="form-control" name="enerji" step="any" required>
+        </div>
+
+        <div class="form-group">
+            <label for="danslık">Danslık:</label>
+            <input type="number" class="form-control" name="danslık" step="any" required>
+        </div>
+
+        <div class="form-group">
+            <label for="romantiklik">Romantiklik:</label>
+            <input type="number" class="form-control" name="romantiklik" step="any" required>
+        </div>
+
+        <div class="form-group">
+            <label for="popülerlik">Popülerlik:</label>
+            <input type="number" class="form-control" name="popülerlik" step="any" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Önerileri Göster</button>
+    </form>
+</div>
+{% endblock %}
